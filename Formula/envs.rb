@@ -1,8 +1,9 @@
 class Envs < Formula
   desc "Sync encrypted development secrets through a private git repository"
   homepage "https://github.com/lminii/envs"
-  version "0.2.0"
   license "MIT"
+
+  uses_from_macos "git"
 
   on_macos do
     on_arm do
@@ -25,8 +26,6 @@ class Envs < Formula
       sha256 "174430a648761a4a7cc92c5dc341fd59e171562005d4e24ec173d54da82fa332"
     end
   end
-
-  uses_from_macos "git"
 
   def install
     bin.install Dir["envs-*"].first => "envs"
